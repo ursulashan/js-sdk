@@ -218,25 +218,38 @@ $(function() {
 
             if (imageView) {
                 var height;
+                var width = img.height();
+                var mod;
                 switch (imageView) {
                     case 'large':
                         height = originHeight;
+                        mod=3;
                         break;
                     case 'middle':
                         height = originHeight * 0.5;
+                        width = width * 0.5;
+                        mod=3;
                         break;
                     case 'small':
                         height = originHeight * 0.1;
+                        width = width * 0.1;
+                        mod=3;
+                        break;
+                    case 'auto':
+                        height = parseInt($("#txt-auto-h").val());
+                        width = parseInt($("#txt-auto-w").val());
+                        mod=5;
                         break;
                     default:
-                        height = originHeight;
+                        height = height?height:outerHeight;
                         break;
                 }
                 fopArr.push({
                     fop: 'imageView2',
-                    mode: 3,
+                    mode: mod, //裁剪模式 http://developer.qiniu.com/docs/v6/api/reference/fop/image/imageview2.html
+                    w: parseInt(width, 10),
                     h: parseInt(height, 10),
-                    q: 100,
+                    q: 65, //新图的质量 默认75
                     format: 'png'
                 });
             }

@@ -1,12 +1,12 @@
 /*!
- * qiniu-js-sdk v1.0.13-beta
+ * qiniu-js-sdk v1.0.14-beta
  *
  * Copyright 2015 by Qiniu
  * Released under GPL V2 License.
  *
  * GitHub: http://github.com/qiniu/js-sdk
  *
- * Date: 2016-1-26
+ * Date: 2016-3-2
 */
 
 /*global plupload ,mOxie*/
